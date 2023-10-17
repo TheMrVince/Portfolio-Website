@@ -1,0 +1,266 @@
+@font-face {
+    font-family: 'Omori';
+    src: url(assets/OMORI_GAME2.ttf);
+}
+
+
+.left_side_container{
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    left: -100%;
+    transition: left 5s;
+}
+
+.left_side_container.active{
+    left: 8px;
+}
+
+.left_side{
+    width: 190px;
+    height: 99%;
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center; /* vertical */
+    flex-direction: column; /* flips horizontal <> vertical */
+}
+
+.circle{
+    width: 140px;
+    height: 140px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    transform: translate(0%, 25%);  
+}
+
+.pfp_circle{
+    width: 132px;
+    height: 132px;
+    display: flex;
+    background-color: white;
+    border-radius: 50%;  
+    overflow: hidden; /* hides / removes parts of image that overflows */
+}
+.pfp_circle img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* preserves ratio */
+    border-radius: 50;
+    display: flex;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40%;
+}
+
+.content button {
+    background: white;
+    width: 140px;
+    height: 40px;
+    margin-bottom: 15px; /* Adjust the spacing between buttons */
+    cursor: pointer;
+    border: 3px solid black;
+    border-radius: 20px;
+    font-family: 'Omori';
+    font-size: 30px;
+}
+
+.content button:hover{
+    background-color: black;
+    color: white;
+}
+
+.track_name{
+    font-family: 'Omori';
+    font-size: 20px;
+}
+
+.music_player_container{
+    display: flex;
+    align-items: center; /* vertical */
+    flex-direction: column; /* flips horizontal <> vertical */
+    position: absolute;
+    bottom: 20px;
+}
+
+.music_player{
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+}
+
+.previous_track, .play_pause, .next_track{
+    padding: 5px 10px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/*
+TO FIX
+.volume_slider_container{
+    display: flex;
+    align-items: center;
+}
+
+.slider{
+    background-color: black;
+    height: 1px;
+}
+*/
+
+/* RIGHT SIDE */
+.right_side{
+    flex: 1;
+    overflow-y: scroll;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    flex-direction: column;
+    /* background-color: antiquewhite; */
+}
+
+
+.lightbulb{
+    transform: translate(-100px, -20%);
+    opacity: 0;
+    object-fit: cover;
+    transition: opacity 2s ease-in-out, transform 1s ease-in;
+}
+
+.lightbulb img{
+    width: 75%;
+    height: 75%;
+}
+
+.lightbulb.active{
+    opacity: 1;
+}
+
+.whiteSpace{
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    position: relative;
+    margin-top: -30%;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    /* background-color: blue; */
+    min-height: 650px;
+    
+}
+
+.whiteSpace img{
+    width: 55%;
+    height: 55%;
+    overflow: hidden;
+    vertical-align: center;
+    /* align-self: flex-start; */
+   
+}
+
+.whiteSpace.active{
+    opacity: 1;
+}
+
+.aboutMe_outline_black {
+    width: 99%;
+    height: 300px; /* Set a fixed height or use a percentage here */
+    background-color: black;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.aboutMe_outline_white{
+    width: 99%;
+    height: 96%;
+    background: white;
+    border-radius: 10px;
+    font-family: 'Omori';
+    font-size: 36px;
+}
+
+.aboutMe_header{
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    position: relative;
+    /* background-color: red; */
+}
+
+.aboutMe_header img{
+    width: 30%;
+    height: 30%;
+    overflow: hidden;
+    vertical-align: top;
+    align-self: flex-start;
+}
+
+.experience_outline_black {
+    width: 99%;
+    height: 300px; /* Set a fixed height or use a percentage here */
+    background-color: black;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.experience_outline_white{
+    width: 99%;
+    height: 96%;
+    background: white;
+    border-radius: 10px;
+    font-family: 'Omori';
+    font-size: 36px;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    display: flex;
+}
+
+.experience_header{
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    position: relative;
+    /* background-color: red; */
+}
+
+.experience_header img{
+    width: 30%;
+    height: 30%;
+    overflow: hidden;
+    vertical-align: top;
+    align-self: flex-start;
+}
+
+.itus{
+    background-color: antiquewhite;
+    width: 99%;
+    height: 96%;
+}
+
+
+.break_block{
+    height: 100px;
+    width: 10px;
+    background-color: white;
+}

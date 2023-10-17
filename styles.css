@@ -1,0 +1,533 @@
+@font-face {
+    font-family: 'Omori';
+    src: url(assets/OMORI_GAME2.ttf);
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+.left_side_container{
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    left: -100%;
+    transition: left 5s;
+}
+
+.left_side_container.active{
+    left: 8px;
+}
+
+.left_side{
+    width: 190px;
+    height: 99%;
+    position: fixed;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center; /* vertical */
+    flex-direction: column; /* flips horizontal <> vertical */
+}
+
+.circle{
+    width: 140px;
+    height: 140px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    transform: translate(0%, 25%);  
+}
+
+.pfp_circle{
+    width: 132px;
+    height: 132px;
+    display: flex;
+    background-color: white;
+    border-radius: 50%;  
+    overflow: hidden; /* hides / removes parts of image that overflows */
+}
+.pfp_circle img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* preserves ratio */
+    border-radius: 50;
+    display: flex;
+}
+
+.desc{
+    font-family: 'Omori';
+    margin-top: 10%;
+    font-size: 28px;
+    text-align: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30%;
+}
+
+.content button {
+    background: white;
+    width: 140px;
+    height: 40px;
+    margin-bottom: 15px; /* Adjust the spacing between buttons */
+    cursor: pointer;
+    border: 3px solid black;
+    border-radius: 20px;
+    font-family: 'Omori';
+    font-size: 30px;
+}
+
+.content button:hover{
+    background-color: black;
+    color: white;
+}
+
+.content a{
+    color: black;
+}
+
+.content a:hover {
+  color: white;
+}
+
+.track_name{
+    font-family: 'Omori';
+    font-size: 20px;
+    text-align: center;
+}
+
+.music_player_container{
+    display: flex;
+    text-align: center;
+    align-items: center; /* vertical */
+    justify-content: center; /* horizontal */
+    flex-direction: column; /* flips horizontal <> vertical */
+    position: absolute;
+    bottom: 20px;
+}
+
+.music_player{
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+}
+
+.previous_track, .play_pause, .next_track{
+    padding: 5px 10px;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+/*
+TO FIX
+.volume_slider_container{
+    display: flex;
+    align-items: center;
+}
+
+.slider{
+    background-color: black;
+    height: 1px;
+}
+*/
+
+/* RIGHT SIDE */
+.right_side{
+    flex: 1;
+    overflow-y: scroll;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    flex-direction: column;
+    /* background-color: antiquewhite; */
+}
+
+
+.lightbulb{
+    transform: translate(-100px, -20%);
+    opacity: 0;
+    object-fit: cover;
+    transition: opacity 2s ease-in-out, transform 1s ease-in;
+}
+
+.lightbulb img{
+    width: 75%;
+    height: 75%;
+}
+
+.lightbulb.active{
+    opacity: 1;
+}
+
+.whiteSpace{
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    position: relative;
+    margin-top: -30%;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    /* background-color: blue; */
+    min-height: 650px;
+    
+}
+
+.whiteSpace img{
+    width: 55%;
+    height: 55%;
+    overflow: hidden;
+    vertical-align: center;
+    /* align-self: flex-start; */
+   
+}
+
+.whiteSpace.active{
+    opacity: 1;
+}
+
+.aboutMe_outline_black {
+    width: 99%;
+    height: 300px; /* Set a fixed height or use a percentage here */
+    background-color: black;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.aboutMe_outline_white{
+    width: 99%;
+    height: 96%;
+    background: white;
+    border-radius: 10px;
+    font-family: 'Omori';
+    font-size: 36px;
+}
+
+.aboutMe_header{
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    position: relative;
+    /* background-color: red; */
+}
+
+.aboutMe_header img{
+    width: 30%;
+    height: 30%;
+    overflow: hidden;
+    vertical-align: top;
+    align-self: flex-start;
+}
+
+.experience_outline_black {
+    width: 99%;
+    height: 900px; /* Set a fixed height or use a percentage here */
+    background-color: black;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.experience_outline_white{
+    width: 99%;
+    height: 98.5%;
+    background: white;
+    border-radius: 10px;
+    font-family: 'Omori';
+    font-size: 36px;
+}
+
+.experience_header{
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    position: relative;
+    /* background-color: red; */
+}
+
+.experience_header img{
+    width: 30%;
+    height: 30%;
+    overflow: hidden;
+    vertical-align: top;
+    align-self: flex-start;
+}
+
+.itus{
+    display: flex;
+    /* background-color: red; */
+    align-items: center; /* vertical */
+    width: 100%;
+    height: 250px;
+    flex-direction: column;
+}
+
+.ng{
+    display: flex;
+    /* background-color: violet; */
+    align-items: center; /* vertical */
+    width: 100%;
+    height: 290px;
+    flex-direction: column;
+}
+
+.rm{
+    display: flex;
+    /* background-color: lime; */
+    align-items: center; /* vertical */
+    width: 100%;
+    height: 250px;
+    flex-direction: column;
+}
+
+.projects_outline_black {
+    width: 99%;
+    height: 1000px; /* Set a fixed height or use a percentage here */
+    background-color: black;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.projects_outline_white{
+    width: 99%;
+    height: 98.5%;
+    background: white;
+    border-radius: 10px;
+    font-family: 'Omori';
+    font-size: 36px;
+}
+
+.projects_header{
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    position: relative;
+    /* background-color: red; */
+}
+
+.projects_header img{
+    width: 25%;
+    height: 25%;
+    overflow: hidden;
+    vertical-align: top;
+    align-self: flex-start;
+}
+
+.project1{
+    /* background-color: grey; */
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Omori';
+}
+
+.project2{
+    /* background-color: grey; */
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Omori';
+}
+
+.project_pic{
+    /* background-color: wheat; */
+    width: 30%;
+    height: auto;
+}
+
+.project_pic img{
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+    vertical-align: top;
+    align-self: flex-start;
+}
+
+.project_cont{
+    /* background-color: red; */
+    width: 70%;
+    height: 100%;
+}
+
+.proj_header_title{
+    background-color: lightgray;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+.proj_title{
+    /* background-color: orange; */
+    width: 70%;
+    height: 100%;
+    font-size: 40px;
+}
+
+.proj_info{
+    /* background-color: blue; */
+    width: 30%;
+    height: 100%;
+    font-size: 40px;
+    text-align: right;
+}
+.project_points{
+    /* background-color: purple; */
+    width: 100%;
+    height: 80%;
+    font-size: 28px;
+}
+
+
+.header_cont{
+    background-color: lightgrey;
+    width: 99%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+.header_title{
+    /* background-color: orange; */
+    width: 70%;
+    height: 100%;
+    font-size: 34px;
+}
+
+.title_info{
+    /* background-color: blue; */
+    width: 30%;
+    height: 100%;
+    text-align: right;
+    font-size: 34px;
+}
+
+.bullet_points{
+    /* background-color: purple; */
+    width: 99%;
+    height: 70%;
+    font-size: 28px;
+}
+
+
+
+li{
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.links_outline_black{
+    width: 99%;
+    height: 200px; /* Set a fixed height or use a percentage here */
+    background-color: black;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    display: flex;
+    position: relative;
+    border-radius: 10px;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.links_outline_white{
+    width: 99%;
+    height: 95%;
+    background: white;
+    border-radius: 10px;
+    font-family: 'Omori';
+    font-size: 36px;
+    display: flex;
+    flex-direction: column;
+}
+
+.links_header{
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    position: relative;
+    /* background-color: red; */
+}
+
+.links_header img{
+    width: 25%;
+    height: 90%;
+    overflow: hidden;
+    align-self: flex-start;
+    /* background-color: antiquewhite; */
+}
+
+.links_outline_white button{
+    background: white;
+    width: 140px;
+    height: 40px;
+    margin-right: 50px; /* Adjust the spacing between buttons */
+    cursor: pointer;
+    border: 3px solid black;
+    border-radius: 20px;
+    font-family: 'Omori';
+    font-size: 30px;
+}
+
+.links_outline_white button:hover{
+    background-color: black;
+    color: white;
+}
+
+.link_button_cont{
+    /* background-color: red; */
+    width: 100%;
+    height: 100%;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+    display: flex;
+    flex-direction: row;
+}
+
+.link_button_cont a{
+    color: black;
+}
+
+.link_button_cont a:hover {
+  color: white;
+}
+
+
+
+.break_block{
+    height: 100px;
+    width: 100%;
+    background-color: white;
+}
+
+.break_block img{
+    height: 100%;
+    width: 100%;
+}
