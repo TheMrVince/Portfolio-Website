@@ -446,7 +446,7 @@ li{
 
 .links_outline_black{
     width: 99%;
-    height: 200px; /* Set a fixed height or use a percentage here */
+    height: 300px; /* Set a fixed height or use a percentage here */
     background-color: black;
     justify-content: center; /* horizontal */
     align-items: center; /* vertical */
